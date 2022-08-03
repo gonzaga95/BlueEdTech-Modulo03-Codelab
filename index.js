@@ -29,8 +29,8 @@ const termos = [
     },
 ];
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
+app.get('/termos/get-all', (req, res) => {
+    res.send(termos);
 });
 
 app.listen(port, () => {
