@@ -32,9 +32,15 @@ const termos = [
     },
 ];
 
-app.get('/termos/get-all', (req, res) => {
-    res.send(termos);
-});
+// app.get('/termos/get-all', (req, res) => {
+//     res.send(termos);
+// });
+
+// app.get('/termos/get-all/:id', (req, res) => {
+//     const idParam = req.params.id;
+//     const escolhaTermo = termos.find((termo) => termo.id == idParam);
+//     res.send(escolhaTermo);
+// });
 
 app.listen(port, () => {
     console.log(`A aplicação está rodando na porta http://localhost:${port}/`);
