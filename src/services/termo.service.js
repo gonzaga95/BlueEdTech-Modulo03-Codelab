@@ -29,6 +29,11 @@ const findAllTermosService = () => {
     return termos;
 };
 
+const findByIdTermoService = (parametroId) => {
+    return termos.find((termo) => termo.id === parametroId);
+};
+
 module.exports = {
     findAllTermosService,
+    findByIdTermoService,
 };
