@@ -19,4 +19,6 @@ const termoSchema = new mongoose.Schema({
     },
 });
 
-module.exports = termoSchema;
+const Termos = mongoose.model('Termos', termoSchema);
+
+module.exports = Termos;

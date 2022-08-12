@@ -21,6 +21,10 @@ const findByIdTermoController = async (req, res) => {
     const termoEscolhido = await termosSerivce.findByIdTermoService(
         parametroId,
     );
+
+    if (!termoEscolhido) {
+        return res.status(400).send({ message: 'Termo não encontrado' });
+    }
     res.status(200).send(termoEscolhido);
 };
 
