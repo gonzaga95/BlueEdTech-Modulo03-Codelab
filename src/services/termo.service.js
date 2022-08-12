@@ -1,27 +1,27 @@
-const findAllTermosService = () => {
-    return termos;
+const termos = require('../models/termo');
+
+const findAllTermosService = async () => {
+    const allTermos = await termos.find();
+    return allTermos;
 };
 
-const findByIdTermoService = (parametroId) => {
-    return termos.find((termo) => termo.id === parametroId);
+const findByIdTermoService = async (parametroId) => {
+    const oneTermo = await termos.findById(parametroId);
+    return oneTermo;
 };
 
-const createTermoService = (newTermo) => {
-    const newId = termos.length + 1;
-    newTermo.id = newId;
-    termos.push(newTermo);
+const createTermoService = async (termo) => {
+    const newTermo = await termos.create(termo);
     return newTermo;
 };
 
-const editTermoService = (id, termoEdit) => {
-    termoEdit['id'] = id;
-    const termoIndex = termos.findIndex((termo) => termo.id == id);
-    termos[termoIndex] = termoEdit;
+const editTermoService = async (id, termoEdit) => {
+    const termoEdited = await termos.findByAndUpdate(id, termoEdit);
+    return termoEdited;
 };
 
-const deleteTermoService = (id) => {
-    const termoIndex = termos.findIndex((termo) => (termo.id = id));
-    return termos.splice(termoIndex, 1);
+const deleteTermoService = async (id) => {
+    return await termos.findByAndDelete(id);
 };
 
 module.exports = {
