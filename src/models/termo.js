@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const termoSchema = new mongoose.Schmema({
+const termoSchema = new mongoose.Schema({
     termo: {
         type: String,
         require: true,
