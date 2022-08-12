@@ -3,19 +3,19 @@ const mongoose = require('mongoose');
 const termoSchema = new mongoose.Schema({
     termo: {
         type: String,
-        require: true,
+        required: true,
     },
     descricao: {
         type: String,
-        require: true,
+        required: true,
     },
     logo: {
         type: String,
-        require: true,
+        required: true,
     },
     ano_de_criacao: {
-        type: String,
-        require: true,
+        type: Number,
+        required: true,
     },
 });
 

@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const port = 3000;
+const routes = require('./src/routes/termo.route');
 const connectMongoDb = require('./src/database/database');
 
-const routes = require('./src/routes/termo.route');
+const port = 3000;
 const app = express();
 
 app.use(express.json());
